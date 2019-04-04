@@ -1,0 +1,50 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <title>Udacity KnockoutJS Map</title>
+    <script src='js/jquery-3.3.1.min.js'></script>
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css">
+    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js"></script>
+    <link rel="stylesheet" href="css/styles.css">
+  </head>
+
+  <body>
+
+    <nav class="navbar navbar-inverse">
+      <div class="container-fluid">
+        <div class="navbar-header">
+          <div class="navbar-brand">
+            <span class="nav-title">Tokyo Destinations</span>
+          </div>
+        </div>
+          <form class="navbar-form navbar-right" role="search">
+          <div class="input-group">
+              <input type="text" class="form-control" placeholder="Search" name="w" data-bind="textInput: searchItem, valueUpdate: 'afterkeydown'">
+              <div class="input-group-btn">
+                  <button class="btn btn-default"><i class="glyphicon glyphicon-search"></i></button>
+              </div>
+          </div>
+        </form>
+      </div>
+    </nav>
+
+    <main class="container-fluid">
+        <div id="map"></div>
+          <div class="dropdown">
+               <div class="dropdown" data-bind="foreach: locationList">
+                <button class=".col-md-3 col-md-offset-0 collapsed in" type="button">
+                <a href="#" class="dropdown" data-bind="text: title, click: show"></a>
+                </button>
+               </div>
+          </div>
+    </main>
+
+    <script src="js/knockout-3.4.2.js"></script>
+    <script src="js/app.js"></script>
+    <script async defer onerror="googleError()" src=
+		"https://maps.googleapis.com/maps/api/js?key=AIzaSyBs_b8W7lKnOcCKPF3X-sjtiXZ21bwaErs&callback=initMap">
+		</script>
+  </body>
+</html>
